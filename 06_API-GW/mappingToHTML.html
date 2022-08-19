@@ -1,0 +1,26 @@
+#set($inputRoot = $input.path('$'))
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Summary of Existing EC2 instances</title>
+    </head>
+    <body>
+        <br>
+        #foreach($elem in $inputRoot)
+        <h1>InstanceId: $elem.InstanceId</h1>
+        Region: $elem.Region<br>
+        InstanceType: $elem.InstanceType<br>
+        ImageId: $elem.ImageId<br>
+        KeyName: $elem.KeyName<br>
+        PrivateDnsName: $elem.PrivateDnsName<br>
+        PrivateIpAddress: $elem.PrivateIpAddress<br>
+        PublicDnsName: $elem.PublicDnsName<br>
+        PublicIpAddress: $elem.PublicIpAddress<br>
+        State: $elem.State.Name
+        #if($foreach.hasNext)<br><br>#end
+        #end
+    </body>
+</html>

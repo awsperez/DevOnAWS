@@ -1,0 +1,19 @@
+#set($inputRoot = $input.path('$'))
+<?xml version="1.0"?>
+<ec2_instances>
+#foreach($elem in $inputRoot)
+    <instance id = "$elem.InstanceId">
+        <Region>$elem.Region</Region>
+        <InstanceType>$elem.InstanceType</InstanceType>
+        <ImageId>$elem.ImageId</ImageId>
+        <KeyName>$elem.KeyName</KeyName>
+        <PrivateDnsName>$elem.PrivateDnsName</PrivateDnsName>
+        <PrivateIpAddress>$elem.PrivateIpAddress</PrivateIpAddress>
+        <PublicDnsName>$elem.PublicDnsName</PublicDnsName>
+        <PublicIpAddress>$elem.PublicIpAddress</PublicIpAddress>
+        <State>$elem.State.Name</State>
+    </instance>
+    #if($foreach.hasNext)#end
+#end
+</ec2_instances>
+

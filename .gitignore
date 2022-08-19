@@ -1,0 +1,7 @@
+# Jupyter Notebooks checkpoints #
+################################
+.ipynb_checkpoints
+
+# Private information #
+###############################
+myConfigFile.png

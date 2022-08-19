@@ -1,0 +1,16 @@
+# Wilmar Perez
+# awsperez@amazon.com
+# 
+# Create S3 Buckets with different users
+#
+#
+
+# Let's define some variables
+AWS_PROFILE="DevOnAWS-fullaccess"
+# aws_bucket = 'awsperez-testbucket'
+object = 'awsperez-testbucket/doggy.jpeg'
+REGION="ca-central-1"
+ttl = 60
+
+clear
+aws s3 presign s3://awsperez-testbucket/doggy.jpeg  --expires-in 120 --profile=$AWS_PROFILE
